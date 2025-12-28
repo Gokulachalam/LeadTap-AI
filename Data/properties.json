@@ -1,0 +1,30 @@
+[
+  {
+    "id": "prop_101",
+    "title": "2BHK apartment on Pine Street",
+    "description": "Calm neighborhood with good ventilation",
+    "neighborhood": "Pine Street",
+    "price": 38000,
+    "bedrooms": 2,
+    "amenities": ["parking", "balcony", "pet-friendly"],
+    "nearby_places": {
+      "school_distance_m": 120,
+      "metro_distance_m": 400,
+      "hospital_distance_m": 900
+    }
+  },
+  {
+    "id": "prop_102",
+    "title": "Studio near city centre",
+    "description": "Affordable studio close to metro station",
+    "neighborhood": "City Centre",
+    "price": 22000,
+    "bedrooms": 1,
+    "amenities": ["metro", "lift"],
+    "nearby_places": {
+      "school_distance_m": 800,
+      "metro_distance_m": 150,
+      "hospital_distance_m": 500
+    }
+  }
+]

@@ -1,0 +1,554 @@
+[
+  {
+    "id": "prop_001",
+    "title": "3BHK Apartment on Pine Street",
+    "description": "Spacious apartment located on Pine Street with excellent ventilation. Ideal for families.",
+    "address": "12 Pine Street",
+    "neighborhood": "Pine Street",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "price": 75000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area_sqft": 1250,
+    "amenities": ["parking", "balcony"],
+    "nearby_places": [
+      {"type": "school", "name": "Pine Valley School", "distance_m": 120},
+      {"type": "park", "name": "Central Park", "distance_m": 300}
+    ]
+  },
+  {
+    "id": "prop_002",
+    "title": "2BHK near Pine Street Market",
+    "description": "Comfortable 2BHK home within walking distance of Pine Street Market and local schools.",
+    "address": "45 Market Road",
+    "neighborhood": "Pine Street Area",
+    "latitude": 12.9720,
+    "longitude": 77.5930,
+    "price": 45000,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "area_sqft": 850,
+    "amenities": ["parking"],
+    "nearby_places": [
+      {"type": "school", "name": "St. Mark's School", "distance_m": 220},
+      {"type": "shop", "name": "Daily Grocery", "distance_m": 80}
+    ]
+  },
+  {
+    "id": "prop_003",
+    "title": "1BHK Studio near Transit Hub",
+    "description": "Compact studio suitable for single professionals. Located next to the bus transit hub.",
+    "address": "7 Elm Road",
+    "neighborhood": "Elm District",
+    "latitude": 12.9701,
+    "longitude": 77.5900,
+    "price": 23000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 420,
+    "amenities": ["public_transit"],
+    "nearby_places": [
+      {"type": "shop", "name": "Corner Shop", "distance_m": 50}
+    ]
+  },
+  {
+    "id": "prop_004",
+    "title": "Luxury 4BHK Penthouse",
+    "description": "Premium penthouse with a private terrace and skyline views. Ideal for executives.",
+    "address": "89 Skyline Circle",
+    "neighborhood": "Skyline",
+    "latitude": 12.9690,
+    "longitude": 77.5890,
+    "price": 150000,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area_sqft": 2500,
+    "amenities": ["parking", "gym", "terrace"],
+    "nearby_places": [
+      {"type": "school", "name": "International Academy", "distance_m": 500},
+      {"type": "park", "name": "Skyline View Park", "distance_m": 200}
+    ]
+  },
+  {
+    "id": "prop_005",
+    "title": "Budget 1BHK Apartment",
+    "description": "Affordable housing option suitable for students and bachelors.",
+    "address": "14 Maple Lane",
+    "neighborhood": "Maple Town",
+    "latitude": 12.9680,
+    "longitude": 77.5922,
+    "price": 18000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 380,
+    "amenities": [],
+    "nearby_places": [
+      {"type": "shop", "name": "Maple Grocery", "distance_m": 100}
+    ]
+  },
+  {
+    "id": "prop_006",
+    "title": "Garden View 2BHK Home",
+    "description": "Quiet 2BHK house overlooking a large community garden.",
+    "address": "22 Garden Road",
+    "neighborhood": "Garden District",
+    "latitude": 12.9750,
+    "longitude": 77.5966,
+    "price": 52000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqft": 980,
+    "amenities": ["garden", "balcony"],
+    "nearby_places": [
+      {"type": "park", "name": "Community Garden", "distance_m": 50},
+      {"type": "school", "name": "Greenwood School", "distance_m": 350}
+    ]
+  },
+  {
+    "id": "prop_007",
+    "title": "3BHK Modern Apartment",
+    "description": "Recently renovated 3BHK apartment with spacious interiors.",
+    "address": "88 Oak View",
+    "neighborhood": "Oakwood",
+    "latitude": 12.9775,
+    "longitude": 77.5944,
+    "price": 68000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area_sqft": 1200,
+    "amenities": ["gym", "parking"],
+    "nearby_places": [
+      {"type": "gym", "name": "Oak Fitness Center", "distance_m": 90}
+    ]
+  },
+  {
+    "id": "prop_008",
+    "title": "Pet-Friendly 2BHK Flat",
+    "description": "Perfect home for pet owners — lots of open areas and pet-friendly neighbors.",
+    "address": "18 Willow Avenue",
+    "neighborhood": "Willow Park",
+    "latitude": 12.9782,
+    "longitude": 77.5933,
+    "price": 48000,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "area_sqft": 940,
+    "amenities": ["pet_friendly", "parking"],
+    "nearby_places": [
+      {"type": "park", "name": "Willow Dog Park", "distance_m": 150}
+    ]
+  },
+    {
+    "id": "prop_009",
+    "title": "Studio Apartment near Tech Park",
+    "description": "Ideal for IT professionals. Compact studio located next to the major tech parks.",
+    "address": "2 Silicon Street",
+    "neighborhood": "Tech Valley",
+    "latitude": 12.9800,
+    "longitude": 77.6012,
+    "price": 27000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 410,
+    "amenities": ["public_transit"],
+    "nearby_places": [
+      {"type": "office", "name": "Infinitus Tech Park", "distance_m": 200}
+    ]
+  },
+  {
+    "id": "prop_010",
+    "title": "2BHK Family Home with Balcony",
+    "description": "Bright and family-friendly home with 2 spacious bedrooms and a large balcony.",
+    "address": "9 Coral Street",
+    "neighborhood": "Coral Meadows",
+    "latitude": 12.9832,
+    "longitude": 77.5999,
+    "price": 55000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqft": 960,
+    "amenities": ["balcony", "parking"],
+    "nearby_places": [
+      {"type": "school", "name": "Coral Public School", "distance_m": 250}
+    ]
+  },
+  {
+    "id": "prop_011",
+    "title": "3BHK Park-Facing Apartment",
+    "description": "Spacious 3BHK with beautiful views of the community park and jogging track.",
+    "address": "18 Crescent Road",
+    "neighborhood": "Crescent Park",
+    "latitude": 12.9848,
+    "longitude": 77.5977,
+    "price": 70000,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area_sqft": 1300,
+    "amenities": ["garden", "gym", "parking"],
+    "nearby_places": [
+      {"type": "park", "name": "Crescent Park", "distance_m": 30}
+    ]
+  },
+  {
+    "id": "prop_012",
+    "title": "Budget 1RK Unit",
+    "description": "Small single-room unit suited for students with low rent.",
+    "address": "6 Ivy Lane",
+    "neighborhood": "Ivy Town",
+    "latitude": 12.9621,
+    "longitude": 77.6055,
+    "price": 15000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 320,
+    "amenities": [],
+    "nearby_places": [
+      {"type": "shop", "name": "Ivy Food Store", "distance_m": 60}
+    ]
+  },
+  {
+    "id": "prop_013",
+    "title": "Luxury 5BHK Villa with Private Pool",
+    "description": "Exclusive villa with a private pool, garden, and dedicated parking.",
+    "address": "101 Palm Grove",
+    "neighborhood": "Palm Residency",
+    "latitude": 12.9599,
+    "longitude": 77.5910,
+    "price": 300000,
+    "bedrooms": 5,
+    "bathrooms": 5,
+    "area_sqft": 4500,
+    "amenities": ["pool", "parking", "garden"],
+    "nearby_places": [
+      {"type": "park", "name": "Palm Garden", "distance_m": 200}
+    ]
+  },
+  {
+    "id": "prop_014",
+    "title": "Pet-Friendly 1BHK",
+    "description": "Affordable 1BHK in a quiet community that welcomes pets.",
+    "address": "5 Daisy Street",
+    "neighborhood": "Daisy Blocks",
+    "latitude": 12.9655,
+    "longitude": 77.6020,
+    "price": 20000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 410,
+    "amenities": ["pet_friendly"],
+    "nearby_places": [
+      {"type": "park", "name": "Daisy Pet Zone", "distance_m": 180}
+    ]
+  },
+  {
+    "id": "prop_015",
+    "title": "2BHK with Gym Access",
+    "description": "Convenient 2BHK apartment with residents-only gym and basement parking.",
+    "address": "44 Ruby Main Road",
+    "neighborhood": "Ruby County",
+    "latitude": 12.9683,
+    "longitude": 77.6063,
+    "price": 60000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqft": 1100,
+    "amenities": ["gym", "parking"],
+    "nearby_places": [
+      {"type": "shop", "name": "Ruby Hypermarket", "distance_m": 70}
+    ]
+  },
+  {
+    "id": "prop_016",
+    "title": "3BHK Corner House",
+    "description": "Independent corner house with private backyard and easy road access.",
+    "address": "78 Orchard Drive",
+    "neighborhood": "Orchard Field",
+    "latitude": 12.9668,
+    "longitude": 77.6120,
+    "price": 83000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area_sqft": 1600,
+    "amenities": ["garden", "parking"],
+    "nearby_places": [
+      {"type": "school", "name": "Orchard High School", "distance_m": 260}
+    ]
+  },
+  {
+    "id": "prop_017",
+    "title": "1BHK Transit-Connected Apartment",
+    "description": "Near metro and bus station. Ideal for daily commuters.",
+    "address": "23 Metro Road",
+    "neighborhood": "Metro Zone",
+    "latitude": 12.9602,
+    "longitude": 77.6001,
+    "price": 24000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 440,
+    "amenities": ["public_transit"],
+    "nearby_places": [
+      {"type": "transit", "name": "Metro Station", "distance_m": 100}
+    ]
+  },
+  {
+    "id": "prop_018",
+    "title": "4BHK Apartment with Terrace",
+    "description": "Elegant 4BHK with a spacious terrace and dedicated indoor parking.",
+    "address": "62 Horizon Road",
+    "neighborhood": "Horizon Estate",
+    "latitude": 12.9619,
+    "longitude": 77.5988,
+    "price": 120000,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "area_sqft": 2100,
+    "amenities": ["terrace", "parking"],
+    "nearby_places": [
+      {"type": "park", "name": "Horizon Park", "distance_m": 90}
+    ]
+  },
+  {
+    "id": "prop_019",
+    "title": "Compact Studio with Balcony",
+    "description": "Cozy studio perfect for singles. Includes a small private balcony.",
+    "address": "4 Sunset Lane",
+    "neighborhood": "Sunset District",
+    "latitude": 12.9627,
+    "longitude": 77.5903,
+    "price": 26000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 350,
+    "amenities": ["balcony"],
+    "nearby_places": [
+      {"type": "shop", "name": "Sunset Mini Mart", "distance_m": 120}
+    ]
+  },
+  {
+    "id": "prop_020",
+    "title": "2BHK Garden-Facing Apartment",
+    "description": "Relaxing 2BHK with greenery views and peaceful surroundings.",
+    "address": "55 Green Circle",
+    "neighborhood": "Greenfield",
+    "latitude": 12.9635,
+    "longitude": 77.5879,
+    "price": 52000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqft": 930,
+    "amenities": ["garden", "parking"],
+    "nearby_places": [
+      {"type": "park", "name": "Greenfield Park", "distance_m": 40}
+    ]
+  },
+
+  {
+    "id": "prop_021",
+    "title": "Modern 3BHK in Lakeside Area",
+    "description": "Premium 3BHK home with lake access and scenic views.",
+    "address": "14 Blue Lake Road",
+    "neighborhood": "Lakeside",
+    "latitude": 12.9580,
+    "longitude": 77.6044,
+    "price": 90000,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area_sqft": 1500,
+    "amenities": ["parking", "balcony"],
+    "nearby_places": [
+      {"type": "park", "name": "Blue Lake Garden", "distance_m": 150}
+    ]
+  },
+  {
+    "id": "prop_022",
+    "title": "Affordable Studio near Market",
+    "description": "Small studio near bustling local markets. Good for bachelors.",
+    "address": "22 Timber Road",
+    "neighborhood": "Timber Market",
+    "latitude": 12.9571,
+    "longitude": 77.6088,
+    "price": 17000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 330,
+    "amenities": [],
+    "nearby_places": [
+      {"type": "shop", "name": "Timber Market", "distance_m": 40}
+    ]
+  },
+  {
+    "id": "prop_023",
+    "title": "2BHK Corner Flat",
+    "description": "Spacious corner flat with great sunlight and ventilation.",
+    "address": "15 Amber Cross",
+    "neighborhood": "Amber Block",
+    "latitude": 12.9562,
+    "longitude": 77.6123,
+    "price": 50000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqft": 920,
+    "amenities": ["parking"],
+    "nearby_places": [
+      {"type": "school", "name": "Amber Kids School", "distance_m": 290}
+    ]
+  },
+  {
+    "id": "prop_024",
+    "title": "3BHK with Gym and Pool Access",
+    "description": "Premium apartment with access to a residents-only gym and a community pool.",
+    "address": "33 Sapphire Terrace",
+    "neighborhood": "Sapphire Enclave",
+    "latitude": 12.9559,
+    "longitude": 77.5992,
+    "price": 88000,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area_sqft": 1450,
+    "amenities": ["gym", "pool", "parking"],
+    "nearby_places": [
+      {"type": "gym", "name": "Sapphire Fitness", "distance_m": 60}
+    ]
+  },
+  {
+    "id": "prop_025",
+    "title": "1BHK Budget Home in Suburbs",
+    "description": "Simple and affordable home for working individuals.",
+    "address": "9 Cedar Lane",
+    "neighborhood": "Cedar Suburb",
+    "latitude": 12.9540,
+    "longitude": 77.5939,
+    "price": 16000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 340,
+    "amenities": [],
+    "nearby_places": [
+      {"type": "shop", "name": "Cedar Store", "distance_m": 70}
+    ]
+  },
+
+  {
+    "id": "prop_026",
+    "title": "Lake-Facing 2BHK",
+    "description": "Soothing lake-facing 2BHK apartment ideal for remote workers.",
+    "address": "7 Lakefront Drive",
+    "neighborhood": "Blue Lagoon",
+    "latitude": 12.9531,
+    "longitude": 77.5893,
+    "price": 65000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqft": 1000,
+    "amenities": ["balcony", "parking"],
+    "nearby_places": [
+      {"type": "park", "name": "Lagoon Walkway", "distance_m": 80}
+    ]
+  },
+  {
+    "id": "prop_027",
+    "title": "Garden Duplex Home",
+    "description": "A beautiful duplex home with direct access to a private garden.",
+    "address": "42 Mint Road",
+    "neighborhood": "Mint Colony",
+    "latitude": 12.9529,
+    "longitude": 77.6055,
+    "price": 78000,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area_sqft": 1800,
+    "amenities": ["garden", "parking"],
+    "nearby_places": [
+      {"type": "school", "name": "Mint Academy", "distance_m": 310}
+    ]
+  },
+  {
+    "id": "prop_028",
+    "title": "Compact 1BHK in Hill District",
+    "description": "Quiet hillside 1BHK with peaceful surroundings.",
+    "address": "8 Hill Crest",
+    "neighborhood": "Hill District",
+    "latitude": 12.9518,
+    "longitude": 77.5970,
+    "price": 24000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 390,
+    "amenities": ["garden", "parking"],
+    "nearby_places": [
+      {"type": "shop", "name": "Hill Market", "distance_m": 110}
+    ]
+  },
+  {
+    "id": "prop_029",
+    "title": "2BHK with Balcony",
+    "description": "Spacious 2BHK with a private balcony and a beautiful view of the city.",
+    "address": "16 City View Road",
+    "neighborhood": "City View",
+    "latitude": 12.9507,
+    "longitude": 77.5945,
+    "price": 55000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqft": 1100,
+    "amenities": ["balcony", "parking"],
+    "nearby_places": [
+      {"type": "park", "name": "City View Park", "distance_m": 120}
+    ]
+  },
+  {
+    "id": "prop_030",
+    "title": "Affordable Studio in Suburbs",
+    "description": "Small studio in a quiet suburban area. Perfect for singles.",
+    "address": "24 Suburban Lane",
+    "neighborhood": "Suburban Area",
+    "latitude": 12.9496,
+    "longitude": 77.5912,
+    "price": 18000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area_sqft": 360,
+    "amenities": [],
+    "nearby_places": [
+      {"type": "shop", "name": "Suburban Market", "distance_m": 60}
+    ]
+  },
+  {
+    "id": "prop_031",
+    "title": "3BHK with Balcony and Terrace",
+    "description": "Premium 3BHK with a private balcony and terrace. Includes a garage.",
+    "address": "36 Terrace Road",
+    "neighborhood": "Terrace District",
+    "latitude": 12.9485,
+    "longitude": 77.5887,
+    "price": 110000,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area_sqft": 1600,
+    "amenities": ["balcony", "terrace", "garage"],
+    "nearby_places": [
+      {"type": "park", "name": "Terrace Garden", "distance_m": 130}
+    ]
+  },
+  {
+    "id": "prop_032",
+    "title": "Affordable Studio in Suburbs",
+    "description": "Small studio in a quiet suburban area. Perfect for singles.",
+    "address": "29 Suburban Lane",
+    "neighborhood": "Suburban Area",
+    "latitude": 12.9496,
+    "longitude": 77.5912,
+    "price": 28000,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "area_sqft": 460,
+    "amenities": ["parking"],
+    "nearby_places": [
+      {"type": "shop", "name": "Suburban Market", "distance_m": 60}
+    ]
+  }
+]
+
+
