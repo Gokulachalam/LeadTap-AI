@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaptap AI - Semantic Property Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4F46E5;
+            --primary-dark: #3730A3;
+            --secondary-color: #10B981;
+            --accent-color: #F59E0B;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --background: #F9FAFB;
+            --card-bg: #FFFFFF;
+            --border-color: #E5E7EB;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            font-size: 48px;
+            color: #FFD700;
+        }
+
+        .logo-text {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 30px;
+        }
+
+        .search-input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 18px 60px 18px 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #F9FAFB;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 20px;
+        }
+
+        .search-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .search-button:active {
+            transform: translateY(0);
+        }
+
+        .results-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .results-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .results-count {
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .property-card {
+            background: #FAFBFC;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .property-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .property-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .property-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .property-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .meta-icon {
+            color: var(--primary-color);
+        }
+
+        .property-amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .amenity-tag {
+            background: #EEF2FF;
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .score-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .score-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .score-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .reasons-section {
+            margin-top: 12px;
+        }
+
+        .reasons-title {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .reasons-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .reason-tag {
+            background: #F3F4F6;
+            color: var(--text-primary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            display: none;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #FEE2E2;
+            color: #DC2626;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .logs {
+            background: #1F2937;
+            color: #10B981;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+
+        .log-timestamp {
+            color: #60A5FA;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+        }
+
+        .no-results-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .search-container, .results-container {
+                padding: 25px;
+            }
+            
+            .property-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-rocket logo-icon"></i>
+                <div class="logo-text">Leaptap AI</div>
+            </div>
+            <p class="subtitle">Revolutionary Semantic Property Search powered by AI</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-input-group">
+                <input 
+                    type="text" 
+                    id="query" 
+                    class="search-input" 
+                    placeholder="Describe your dream property... (e.g., '3 bedroom apartment with parking near schools under $500,000')"
+                    autocomplete="off"
+                >
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <button class="search-button" onclick="search()">
+                <i class="fas fa-search"></i>
+                Search Properties
+            </button>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Finding your perfect match...</p>
+        </div>
+
+        <div id="error" class="error"></div>
+
+        <div class="results-container">
+            <div class="results-header">
+                <h2 class="results-title">Search Results</h2>
+                <span class="results-count" id="resultsCount">0 properties found</span>
+            </div>
+            <div id="results"></div>
+        </div>
+
+        <div class="logs">
+            <h3>System Logs:</h3>
+            <div id="logOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        // Log function for frontend
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            const logElement = document.getElementById('logOutput');
+            logElement.innerHTML += `<div class="log-entry"><span class="log-timestamp">[${timestamp}]</span> ${message}</div>`;
+            console.log(message);
+        }
+
+        // Error handling function
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            log(`ERROR: ${message}`);
+        }
+
+        // Clear previous results and errors
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('resultsCount').textContent = '0 properties found';
+        }
+
+        async function search() {
+            const queryInput = document.getElementById("query");
+            const query = queryInput.value.trim();
+            
+            if (!query) {
+                showError("Please enter a search query");
+                return;
+            }
+
+            clearResults();
+            document.getElementById('loading').style.display = 'block';
+            log(`Searching for: "${query}"`);
+
+            try {
+                const res = await fetch("/search", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ query: query })
+                });
+
+                if (!res.ok) {
+                    throw new Error(`Server responded with status: ${res.status}`);
+                }
+
+                const data = await res.json();
+                log(`Received ${data.results.length} results`);
+                
+                const resultsContainer = document.getElementById("results");
+                resultsContainer.innerHTML = '';
+                
+                if (data.results.length === 0) {
+                    resultsContainer.innerHTML = `
+                        <div class="no-results">
+                            <i class="fas fa-search-minus no-results-icon"></i>
+                            <p>No properties found matching your criteria</p>
+                        </div>
+                    `;
+                } else {
+                    data.results.forEach(r => {
+                        const reasons = r.reasons.join(', ');
+                        const amenities = r.metadata.amenities || [];
+                        
+                        let amenitiesHtml = '';
+                        if (amenities.length > 0) {
+                            amenitiesHtml = `
+                                <div class="property-amenities">
+                                    ${amenities.map(a => `<span class="amenity-tag">${a.replace('_', ' ').replace('pet_friendly', 'Pet Friendly')}</span>`).join('')}
+                                </div>
+                            `;
+                        }
+
+                        resultsContainer.innerHTML += `
+                            <div class="property-card">
+                                <h3 class="property-title">${r.title}</h3>
+                                <div class="property-meta">
+                                    <div class="meta-item">
+                                        <i class="fas fa-bed meta-icon"></i>
+                                        <span>${r.metadata.bedrooms} Bedroom${r.metadata.bedrooms > 1 ? 's' : ''}</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-dollar-sign meta-icon"></i>
+                                        <span>$${r.metadata.price.toLocaleString()}</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-map-marker-alt meta-icon"></i>
+                                        <span>${r.metadata.neighborhood}</span>
+                                    </div>
+                                </div>
+                                ${amenitiesHtml}
+                                <div class="score-section">
+                                    <span class="score-label">Match Score</span>
+                                    <span class="score-value">${r.score}</span>
+                                </div>
+                                <div class="reasons-section">
+                                    <div class="reasons-title">Matching Factors</div>
+                                    <div class="reasons-list">
+                                        ${r.reasons.map(reason => `<span class="reason-tag">${reason.replace('_', ' ')}</span>`).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+                
+                document.getElementById('resultsCount').textContent = `${data.results.length} properties found`;
+            } catch (error) {
+                showError(`Search failed: ${error.message}`);
+                log(`Search error: ${error.message}`);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            log('Leaptap AI Property Search initialized');
+            document.getElementById('query').focus();
+        });
+
+        // Add enter key support
+        document.getElementById('query').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                search();
+            }
+        });
+    </script>
+</body>
+</html>
